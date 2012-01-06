@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.steelejr.greenwood.rcp.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.steelejr.greenwood.rcp.Perspective"
+            id="com.steelejr.greenwood.rcp.perspective"
+            name="Patients">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.steelejr.greenwood.rcp.application"
+            name="Optical Shop">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.steelejr.greenwood.rcp.editors.PatientEditor"
+            default="false"
+            icon="icons/images/person.gif"
+            id="com.steelejr.greenwood.rcp.patientEditor"
+            name="Patient Editor">
+      </editor>
+   </extension>
+
+</plugin>
